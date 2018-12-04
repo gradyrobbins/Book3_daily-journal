@@ -1,5 +1,40 @@
 console.log("journal.js")
 
+// borrowed from Jisie's "resource-tracker":
+// let formContainer = document.querySelector("#form-container");
+
+// formContainer.innerHTML = `<form>
+// <section>
+// <label for="date">Date</label>
+// <input type="date" name="date" id="journal-date" >
+// </section>
+
+// <section>
+// <label for="conceptscovered">Concepts Covered:</label>
+// <input type="text" name="conceptscovered" id="journal-conceptscovered">
+// </section>
+
+// <section>
+// <label for="resourcetype">Journal entry:</label>
+// <input type="text" name="journalentry">
+// </section>
+
+// <section>
+// <label for="mood">Mood:</label>
+// <select name="mood" size="4">
+//                 <option value="happy">Happy</option>
+//                 <option value="fine">Fine</option>
+//                 <option value="sad">Sad</option>
+//                 <option value="Anxious">Anxious</option>
+//         </select>
+// </section>
+
+// <section>
+//   <button type="button" id="add-button">Record Journal Entry</button>
+// </section>
+// </form>`;
+
+
 const journalEntries = [
     {
         date: "07/24/2018",
@@ -17,6 +52,7 @@ const journalEntries = [
 
     Arguments: journalEntry (object)
 */
+
 const makeJournalEntryComponent = (journalEntries) => {
     // Create your own HTML structure for a journal entry
     return 
@@ -28,9 +64,16 @@ const makeJournalEntryComponent = (journalEntries) => {
     </div>`
 }
 
-const renderJournalEntries = (entries) => {
 
+
+
+let entryLogEl = document.querySelector('.entryLog');
+entryLogEl.textContent += "bloop"
+
+const renderJournalEntries = (entries) => {
+    let entryEl = document.querySelector('.entryLog');
+    entryEl.textContent += "bloop"
 }
 
 // Invoke the render function
-renderJournalEntries(journalEntries)
+// renderJournalEntries(journalEntries)
