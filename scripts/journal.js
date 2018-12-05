@@ -38,7 +38,6 @@ formContainer.innerHTML = `<form>
 const articlesContainer = document.createElement("section");
 articlesContainer.classList.add("articles-container");
 
-
 let resourcesContainer = document.querySelector("#resources-container");
 resourcesContainer.appendChild(articlesContainer);
 
@@ -53,30 +52,26 @@ const journalEntries = [
     }
 ]
 
-// console.table(journalEntries);
+console.table(journalEntries);
 
 // copy pasta from Jisie's Resource Tracker
 let createAndAppendResources = () => {
-    // for(let i = 0; i < journalEntries.length; i++){
-    //   console.log(resourcesArray[i]);
-    // }
+    for(let i = 0; i < journalEntries.length; i++){
+      console.log(journalEntries[i]);
+    }
     articlesContainer.innerHTML = "";
   
     journalEntries.forEach(function(resourceObj){
-      console.log(resourceObj);
+      // console.log(resourceObj);
       const resourceElement = document.createElement("section");
       // <a href={link}>{name}</a>
-      const linkElement = document.createElement("a");
-      linkElement.textContent = resourceObj.name;
-      linkElement.setAttribute("href", resourceObj.link);
-      resourceElement.appendChild(linkElement);
+      // const linkElement = document.createElement("a");
+      // linkElement.textContent = resourceObj.name;
+      // linkElement.setAttribute("href", resourceObj.link);
+      // resourceElement.appendChild(linkElement);
       
       articlesContainer.appendChild(resourceElement);
-    //   if(resourceObj.type === "Article"){
-    //     articlesContainer.appendChild(resourceElement);
-    //   } else if(resourceObj.type === "Video") {
-    //     videosContainer.appendChild(resourceElement);
-    //   }
+   
     })
   }
   
@@ -91,16 +86,16 @@ let createAndAppendResources = () => {
     let resourceLink = document.querySelector('input[name="conceptscovered"]').value;
     let resourceLink2 = document.querySelector('input[name="journalentry"]').value;
     // i'm not able to retrieve the value of the below so i am commenting out for more research
-    // let resourceType = document.querySelector('input[mood]').value;
+    let resourceType = document.querySelector('input[name="mood"]').value;
   
     // console.log("Input values: ", resourceName, resourceLink, resourceLink2, resourceType);
-    console.log("Input values: ", resourceName, resourceLink, resourceLink2);
+    console.log("Input values: ", resourceName, resourceLink, resourceLink2, resourceType);
   
     let resource = {
       date: resourceName,
       concept: resourceLink,
       entry: resourceLink2,
-    //   mood: resourceType
+      mood: resourceType
     }
   
     journalEntries.push(resource);
