@@ -21,7 +21,7 @@ formContainer.innerHTML = `<form>
 
 <section>
 <label for="mood">Mood:</label>
-<select name="mood" size="4">
+<select id="mySelect" name="mood" size="4">
                 <option value="happy">Happy</option>
                 <option value="fine">Fine</option>
                 <option value="sad">Sad</option>
@@ -52,7 +52,7 @@ const journalEntries = [
     }
 ]
 
-console.table(journalEntries);
+// console.table(journalEntries);
 
 // copy pasta from Jisie's Resource Tracker
 let createAndAppendResources = () => {
@@ -86,18 +86,21 @@ let createAndAppendResources = () => {
     let resourceLink = document.querySelector('input[name="conceptscovered"]').value;
     let resourceLink2 = document.querySelector('input[name="journalentry"]').value;
     // i'm not able to retrieve the value of the below so i am commenting out for more research
-    let resourceType = document.querySelector('input[name="mood"]').value;
-  
+    
+        let x = document.getElementById("mySelect").selectedIndex;
+        let y = document.getElementsByTagName("option")[x].value;
+    
     // console.log("Input values: ", resourceName, resourceLink, resourceLink2, resourceType);
-    console.log("Input values: ", resourceName, resourceLink, resourceLink2, resourceType);
+    console.log("Input values: ", resourceName, resourceLink, resourceLink2, y);
   
     let resource = {
       date: resourceName,
       concept: resourceLink,
       entry: resourceLink2,
-      mood: resourceType
+      mood: y
     }
   
+
     journalEntries.push(resource);
     createAndAppendResources();
   })
