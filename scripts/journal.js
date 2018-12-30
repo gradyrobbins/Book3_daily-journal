@@ -26,7 +26,15 @@ formContainer.innerHTML = `<form>
                 <option value="Fine">Fine</option>
                 <option value="Sad">Sad</option>
                 <option value="Anxious">Anxious</option>
-        </select>
+    <option>🤓</option>
+    <option>🤯</option>
+    <option>💩</option>
+    <option>🤨</option>
+    <option>😐</option>
+    <option>💡</option>
+    <option>🎊</option>
+    <option>🎯</option>
+</select>
 </section>
 
 <section>
