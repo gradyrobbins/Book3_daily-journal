@@ -22,18 +22,18 @@ formContainer.innerHTML = `<form>
 <section>
 <label for="mood">Mood:</label>
 <select id="mySelect" name="mood" size="4">
-                <option value="Happy">Happy</option>
-                <option value="Fine">Fine</option>
-                <option value="Sad">Sad</option>
-                <option value="Anxious">Anxious</option>
-    <option>🤓</option>
-    <option>🤯</option>
-    <option>💩</option>
-    <option>🤨</option>
-    <option>😐</option>
-    <option>💡</option>
-    <option>🎊</option>
-    <option>🎯</option>
+    <option value="Happy">Happy</option>
+    <option value="Fine">Fine</option>
+    <option value="Sad">Sad</option>
+    <option value="Anxious">Anxious</option>
+    <option value="Nerdy">🤓</option>
+    <option value="Mind Blown">🤯</option>
+    <option value="Poopy">💩</option>
+    <option value="The Rock is cookin'">🤨</option>
+    <option value="Meg">😐</option>
+    <option value="contemplative">💡</option>
+    <option value="Party Time">🎊</option>
+    <option value="Focused">🎯</option>
 </select>
 </section>
 
@@ -50,6 +50,10 @@ let resourcesContainer = document.querySelector("#resources-container");
 resourcesContainer.appendChild(articlesContainer);
 
 let containerRef = document.querySelector("#container");
+
+let entryLogRef = document.querySelector(".entryLog");
+entryLogRef.innerHTML += "Hello World"
+
 
 
 const journalEntries = [
@@ -92,8 +96,8 @@ let createAndAppendResources = () => {
             articlesContainer.innerHTML += entryComponent;
 
         }
+        createAndAppendResources();
     }
-    createAndAppendResources();
 
     //event listener on add button; capture values from input fields
     let addButton = document.querySelector("#add-button");
@@ -104,7 +108,7 @@ let createAndAppendResources = () => {
         let dateValue = document.querySelector('input[name="date"]').value;
         let conceptsCoveredValue = document.querySelector('input[name="conceptscovered"]').value;
         let journalEntryValue = document.querySelector('input[name="journalentry"]').value;
-        //for "mood" selector:
+        //capture values of "mood" dropdown selection:
         let moodSelector = document.getElementById("mySelect").selectedIndex;
         let moodValue = document.getElementsByTagName("option")[moodSelector].value;
 
@@ -118,10 +122,11 @@ let createAndAppendResources = () => {
         }
 
         console.log("resource: " , resource)
-        journalEntries.push(resource);
+        articlesContainer.innerHTML += "resource"
+        // journalEntries.push(resource);
 
-        console.table("journalEntries ", journalEntries)
-        createAndAppendResources();
+        // console.table("journalEntries ", journalEntries)
+        // createAndAppendResources();
     })
 
 
