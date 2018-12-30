@@ -16,3 +16,9 @@ h3 {
     /* align-items: center; */
     border: 3px dashed darkorchid;
   }
+
+  #articles-container {
+      margin: 25px;
+  }
+
+  
