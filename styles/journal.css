@@ -1,9 +1,9 @@
-/* form {
+form {
     background-color: burlywood;
-    
-} */
 
-h3 {
+}
+
+h1 {
     font-size: 1.5em;
     color: rgb(74, 65, 97);
 }
@@ -21,4 +21,8 @@ h3 {
       margin: 25px;
   }
 
-  
+.singleJournalEntry {
+    border: 1px solid plum;
+    margin: 10px;
+    padding: 10px;
+}

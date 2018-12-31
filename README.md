@@ -1,6 +1,6 @@
 # Grady's Daily Journal
 
-### borrowed from Colleen Woolsey's README:
+### (credit to Colleen Woolsey's README):
 #### DAILY JOURNAL PART 1 AND 2
 
 1. Built a form for entering in journal entries.
@@ -8,12 +8,14 @@
 1. Built a data structure to represent a journal entry.
 1. Built a function that returns an HTML representation of that data structure.
 1. Rendered it to the DOM.
+
 #### DAILY JOURNAL - PART 3 The learning objectives were:
 
 1. To set up JSON Server to store the data for daily journal entries
 1. Query that data from the API
 1. Use Promises (fetch)
 1. Render the entries to the DOM.
+
 #### DAILY JOURNAL - PART 4
 
 1. Modularized JavaScript code - created data.js, entriesDOM.js and entryComponent.js

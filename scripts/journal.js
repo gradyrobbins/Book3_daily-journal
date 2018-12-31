@@ -49,23 +49,21 @@ formContainer.innerHTML =
 </section>
 </form>`;
 
+let journalEntries = [];
 
-// declare a variable to represent an array of objects, each object inside the array represents one journal entry. (first 2 entries are pre-loaded/hard coded)
-const journalEntries = [
-    {
-        date: "07/24/2018",
-        concept: "Array methods",
-        entry: "We learned about 4 different array methods today. forEach made sense, but the others still confuse me.",
-        mood: "Ok"
-    },
-    {
-        date: "08/24/2018",
-        concept: "more Array methods",
-        entry: "bloop bloop bleep",
-        mood: "Ok"
+let getJournalEntries = () => {
+
+    return fetch(`http://localhost:3000/journalEntries/`) // Fetch from the API
+    .then(response => response.json())  // Parse as JSON
+
+
     }
-]
-console.table(journalEntries);
+
+
+getJournalEntries().then(entry => {
+    createAndAppend(entry)
+});
+
 
 
 // LOOP TO ADD ARRAY DATA TO HTML/DOM
@@ -83,7 +81,7 @@ let createAndAppend = () => {
     // Add each object's data (now HTML) into "entryContainer"
 
     for (let i = 0; i < journalEntries.length; i++) {
-        entryLogContainer.innerHTML +=  `<article>
+        entryLogContainer.innerHTML +=  `<article class="singleJournalEntry">
                                             <h5>Date: ${journalEntries[i].date} </h5> <br/>
                                             <p>Concept: ${journalEntries[i].concept} </p> <br/>
                                             <p>Entry: ${journalEntries[i].entry} </p><br/>
@@ -122,39 +120,7 @@ addButton.addEventListener("click", () => {
 
     journalEntries.push(newest_journal_entry);
     // console.log("journalEntries ", journalEntries)
+    // getJournalEntries();
+    console.log("journalEntries ", journalEntries)
     createAndAppend(journalEntries);
 })
-
-/*
-    Purpose: To create, and return, a string template that
-    represents a single journal entry object as HTML
-
-    Arguments: journalEntry (object)
-*/
-
-// const makeJournalEntryComponent = (journalEntries) => {
-//     // Create your own HTML structure for a journal entry
-//     return
-//     `<div class="entriesDOM">
-//     <h2>${journalEntries.title}</h2>
-//     <h4>${journalEntries.date}</h4>
-//     <p>${journalEntries.content}</p>
-//     <button id="delete--${journalEntries.id}">delete</button>
-//     </div>`
-// }
-
-
-
-
-
-
-// let entryLogEl = document.querySelector('.entryLog');
-// entryLogEl.textContent += "bloop"
-
-// const renderJournalEntries = (entries) => {
-//     let entryEl = document.querySelector('.entryLog');
-//     entryEl.textContent += "bloop"
-// }
-
-// Invoke the render function
-// renderJournalEntries(journalEntries)
